@@ -1,0 +1,478 @@
+// Import local SCSS Files
+@import "reset", "variables", "fonts";
+
+/* Responsive - mobile */
+@media (max-width: 767px) {
+    /* ##### Common CSS ##### */
+    :is(header, section, footer) h1 {
+        font-size: 24px;
+        font-weight: 600;
+    }
+    :is(section, footer) .inner-box {
+        width: 100%;
+        padding: 80px 20px;
+        margin: 0 auto;
+    }
+    @mixin btnmore {
+        font-size: 20px;
+        margin: 0 auto;
+        .bi {
+            padding-left: 10px;
+            font-size: 20px;
+        }
+    }
+    body {
+        font-size: 20px;
+        width: 100%;
+        height: auto;
+    }
+    .container.main-page {
+        .main-page-inner {
+            width: 100%; //끝난 후 100% 로 변경
+            height: 100%;
+        }
+    }
+    section {
+        position: static;
+        height: auto;
+    }
+    /* ##### Header ##### */
+    .header-wrap {
+        height: 52px;
+        font-size: 16px;
+        position: fixed;
+        .inner-box {
+            width: 100%;
+            height: 100%;
+            padding: 0 20px;
+            margin: 0;
+            .logo-box {
+                width: 93px;
+                transform: translateY(-2px);
+            }
+            .nav-menu {
+                display: none;
+            }
+            .mega-navi {
+                display: block;
+                background-color: $white;
+                position: fixed;
+                right: calc(-100% / 1.25);
+                top: 0;
+                width: calc(100% / 1.25);
+                height: 100vh;
+                transition: 0.5s;
+                .mega-navi-inner {
+                    padding: 20px;
+                    .navi-search {
+                        margin: 40px 0 20px 0;
+                        input[type=text] {
+                            border: 1px solid $black;
+                            border-radius: 20px;
+                            padding: 8px 50px 8px 20px;
+                            width: 100%;
+                            background-color: transparent;
+                        }
+                        button {
+                            border: none;
+                            background-color: transparent;
+                            position: absolute;
+                            right: 30px;
+                            transform: translateY(3px);
+                            .bi-search {
+                                font-size: 18px;
+                                color: $black;
+                            }
+                        }
+                    }
+                    .mega-navi-title {
+                        font-weight: 500;
+                        margin: 0;
+                        padding: 20px 0;
+                        position: relative;
+                        border-bottom: 1px solid $light-gary;
+                        width: 100%;
+                        & > li {
+                            &:after {
+                                content: '\F282';
+                                font-family: $bs-font;
+                                position: absolute;
+                                right: 0;
+                                transform: translateY(5px);
+                            }
+                        }
+                        .mega-navi-detail {
+                            display: none;
+                            margin: 0;
+                            padding: 10px 0;
+                            width: 100%;
+                            left: 0;
+                            margin-top: 20px;
+                            background-color: $light-gary;
+                            li {
+                                padding: 5px 0;
+                                font-weight: 400;
+                            }
+                        }
+                    }
+                }
+                &.active {
+                    right: 0;
+                }
+            }
+            .btn-box {
+                #languages {
+                    display: block;
+                }
+                .search {
+                    display: none;
+                }
+                .trigger {
+                    display: block;
+                    width: 18px;
+                    height: 16px;
+                    position: relative;
+                    margin-left: 20px;
+                    z-index: 100;
+                    span {
+                        position: absolute;
+                        display: inline-block;
+                        width: 100%;
+                        height: 1px;
+                        background-color: $black;
+                        transition: 0.5s;
+                        &:nth-child(2) {
+                            top: 50%;
+                        }
+                        &:nth-child(3) {
+                            top: 100%;
+                        }
+                    }
+                    &.active span:nth-child(1) {
+                        transform: rotate(45deg);
+                        top: 50%;
+                    }
+                    &.active span:nth-child(2) {
+                        display: none;
+                    }
+                    &.active span:nth-child(3) {
+                        transform: rotate(-45deg);
+                        top: 50%;
+                    }
+                }
+            }
+        }
+    }
+    /* ##### Section ##### */
+    /* section - visual */
+    .visual {
+        .visual-img-fade {
+            height: calc(100vh - 100px);
+            img {
+                object-fit: cover;
+                width: inherit;
+                height: inherit;
+            }
+        }
+        .visual-text-box {
+            position: absolute;
+            left: 20px;
+            bottom: 40px;
+            div {
+                font-size: 20px;
+                font-weight: 600;
+                span {
+                    display: block;
+                }
+            }
+        }
+        .scroll-down {
+            display: none;
+        }
+    }
+    /* section - about */
+    .about {
+        height: 376px;
+        .inner-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &.scroll-on {
+                left: -40px;
+            }
+            .about-title {
+                h1 {
+                    font-size: 20px;
+                    b {
+                        font-size: 20px;
+                    }
+                }
+                p {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    /* section - global */
+    .global {
+        .bg-box {
+            height: 600px;
+            background-image: url(../images/global-map.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 60%;
+            background-attachment: fixed;
+        }
+    }
+    /* section - business */
+    .business {
+        padding: 0;
+        .inner-box {
+            .business-wrap {
+                width: 100%;
+                flex-direction: column;
+                .slide-box {
+                    margin: 0;
+                    text-align: center;
+                    margin: 0 auto;
+                    div {
+                        width: 100%;
+                        top: 0;
+                        h1 {
+                            font-size: 20px;
+                        }
+                        b {
+                            font-size: 20px;
+                            color: $dark-blue;
+                            margin: 20px 0;
+                            display: inline-block;
+                        }
+                        button {
+                            @include btnmore;
+                        }
+                    }
+                }
+                .item-list {
+                    margin: 0 auto;
+                    padding: 0;
+                    .item {
+                        margin: 40px 0;
+                        width: 250px;
+                        .item-img {
+                            width: 100%;
+                            height: 250px;
+                            position: relative;
+                            &:hover img {
+                                filter: none;
+                            }
+                            img {
+                                width: 100%;
+                                height: 250px;
+                                object-fit: cover;
+                                transition: 0.3s;
+                            }
+                            .type {
+                                position: absolute;
+                                bottom: 20px;
+                                text-align: center;
+                                font-size: 14px;
+                                a {
+                                    width: 75px;
+                                    background-color: #0000005e;
+                                    &:after {
+                                        content: '\F285';
+                                        position: absolute;
+                                        font-family: $bs-font;
+                                        right: 10px;
+                                        top: 9px;
+                                    }
+                                }
+                            }
+                        }
+                        .item-title {
+                            div {
+                                font-family: $primary-en;
+                                font-size: 16px;
+                                b {
+                                    color: $dark-red;
+                                    font-size: 16px;
+                                }
+                            }
+                            p {
+                                font-size: 16px;
+                                margin-top: 15px 0;
+                            }
+                        }
+                    }
+                    .first-item,
+                    .sec-item,
+                    .last-item {
+                        position: static;
+                    }
+                    .sec-item ,
+                    .last-item {
+                        .btn-more-sub {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* section - ESG */
+    .esg {
+        .inner-box {
+            .esg-title {
+                text-align: center;
+                margin-bottom: 40px;
+                transform: translateY(-50px);
+                h1 {
+                    font-size: 20px;
+                    b {
+                        color: $dark-blue;
+                    }
+                }
+                div {
+                    margin-top: 20px;
+                    font-size: 16px;
+                }
+                &.active {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            .eag-video {
+                position: relative;
+                width: 100%;
+                height: 0;
+                padding-top: 56%;
+                iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    /* section - News */
+    .news {
+        .inner-box {
+            .news-title {
+                b {
+                    font-size: 20px;
+                }
+                div {
+                    display: block;
+                    padding-bottom: 0;
+                    position: relative;
+                    &:before {
+                        height: 1px;
+                    }
+                    button {
+                        @include btnmore;
+                        padding: 15px 0;
+                    }
+                }
+            }
+            .news-wrap {
+                ul {
+                    li {
+                        padding: 20px 0;
+                        .news-date {
+                            flex: 1;
+                            font-size: 16px;
+                            font-weight: 500;
+                            text-align: center;
+                            span {
+                                display: block;
+                            }
+                        }
+                        .news-detail {
+                            flex: 8;
+                            span {
+                                display: block;
+                                font-weight: 400;
+                                font-size: 16px;
+                                padding-left: 20px;
+                                &:nth-child(1) {
+                                    color: $dark-blue;
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            width: 100%;
+                            height: 2px;
+                            background-color: $light-gary;
+                            bottom: 0;
+                            left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* ##### Footer ##### */
+    .footer-wrap {
+        font-size: 14px;
+        .site-map-wrap {
+            .inner-box {
+                padding: 20px;
+                margin: 0 auto;
+                flex-direction: column;
+                gap: 0;
+                .list-title {
+                    & > li {
+                        font-size: 14px;
+                        padding: 10px 0;
+                        position: relative;
+                        &:after {
+                            content: '\F282';
+                            position: absolute;
+                            font-family: $bs-font;
+                            right: 0px;
+                            line-height: 16px;
+                            font-size: 16px;
+                        }
+                    }
+                    .list-detail {
+                        display: none;
+                        margin-top: 0;
+                        margin-bottom: 20px;
+                        font-size: 12px;
+                        li {
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+        .company-info {
+            border-top: 1px solid $light-gary;
+            .inner-box {
+                margin: 0 auto;
+                padding: 20px;
+                display: block;
+                font-size: 12px;
+                .company-info-detail {
+                    div {
+                        margin-bottom: 20px;
+                        span {
+                            display: inline-block;
+                            &:after {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                .family-site-box {
+                    display: none;
+                }
+            }
+        }
+    }
+}

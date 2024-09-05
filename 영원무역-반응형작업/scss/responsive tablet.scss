@@ -1,0 +1,424 @@
+// Import local SCSS Files
+@import "reset", "variables", "fonts";
+
+/* Responsive - mobile */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* ##### Common CSS ##### */
+    :is(section, footer) .inner-box {
+        width: 100%;
+        padding: 80px 20px;
+    }
+    @mixin btnmore {
+        display: block;
+        border: none;
+        background-color: transparent;
+        font-size: 32px;
+        font-family: $primary-en;
+        .bi {
+            padding-left: 20px;
+            font-size: 24px;
+            color: $dark-gray;
+            transform: translateY(5px);
+        }
+    }
+    body {
+        height: auto;
+    }
+    .container.main-page {
+        .main-page-inner {
+            width: 100%; //끝난 후 100% 로 변경
+            height: 100%;
+        }
+    }
+    section {
+        position: static;
+        height: auto;
+    }
+    /* ##### Header ##### */
+    .header-wrap {
+        height: 80px;
+        font-size: 16px;
+        position: fixed;
+        .inner-box {
+            padding: 0 20px;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            .logo-box {
+                width: 135px;
+            }
+            .nav-menu {
+                display: none;
+            }
+            .mega-navi {
+                display: block;
+                background-color: $white;
+                position: fixed;
+                right: calc(-100% / 1.25);
+                top: 0;
+                width: calc(100% / 1.25);
+                height: 100vh;
+                transition: 0.5s;
+                .mega-navi-inner {
+                    padding: 40px 20px;
+                    .navi-search {
+                        margin: 40px 0;
+                        input[type=text] {
+                            border: 1px solid $black;
+                            border-radius: 20px;
+                            padding: 8px 60px 8px 30px;
+                            width: 100%;
+                            background-color: transparent;
+                        }
+                        button {
+                            border: none;
+                            background-color: transparent;
+                            position: absolute;
+                            right: 50px;
+                            transform: translateY(3px);
+                            .bi-search {
+                                font-size: 18px;
+                                color: $black;
+                            }
+                        }
+                    }
+                    .mega-navi-title {
+                        font-weight: 500;
+                        margin: 0;
+                        padding: 20px 0;
+                        position: relative;
+                        border-bottom: 1px solid $light-gary;
+                        width: 100%;
+                        & > li {
+                            &:after {
+                                content: '\F282';
+                                font-family: $bs-font;
+                                position: absolute;
+                                right: 0;
+                                transform: translateY(5px);
+                            }
+                        }
+                        .mega-navi-detail {
+                            display: none;
+                            margin: 0;
+                            padding: 10px 0;
+                            width: 100%;
+                            left: 0;
+                            margin-top: 20px;
+                            background-color: $light-gary;
+                            li {
+                                padding: 5px 0;
+                                font-weight: 400;
+                            }
+                        }
+                    }
+                }
+                &.active {
+                    right: 0;
+                }
+            }
+            .btn-box {
+                #languages {
+                    display: block;
+                    font-size: 20px;
+                }
+                .search {
+                    display: none;
+                }
+                .trigger {
+                    display: block;
+                    width: 23px;
+                    height: 18px;
+                    position: relative;
+                    margin-left: 20px;
+                    z-index: 100;
+                    span {
+                        position: absolute;
+                        display: inline-block;
+                        width: 100%;
+                        height: 2px;
+                        background-color: $black;
+                        transition: 0.5s;
+                        &:nth-child(2) {
+                            top: 50%;
+                        }
+                        &:nth-child(3) {
+                            top: 100%;
+                        }
+                    }
+                    &.active span:nth-child(1) {
+                        transform: rotate(45deg);
+                        top: 50%;
+                    }
+                    &.active span:nth-child(2) {
+                        display: none;
+                    }
+                    &.active span:nth-child(3) {
+                        transform: rotate(-45deg);
+                        top: 50%;
+                    }
+                }
+            }
+        }
+    }
+    /* ##### Section ##### */
+    /* section - visual */
+    .visual {
+        .visual-img-fade {
+            height: 921.59px;
+            img {
+                object-fit: cover;
+                width: inherit;
+                height: inherit;
+            }
+        }
+        .visual-text-box {
+            position: absolute;
+            left: 20px;
+            bottom: 80px;
+            div {
+                font-size: 32px;
+                font-weight: 600;
+                span {
+                    display: block;
+                }
+            }
+        }
+        .scroll-down {
+            display: none;
+        }
+    }
+    /* section - about */
+    .about {
+        height: 802px;
+        .inner-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &.scroll-on {
+                left: -40px;
+            }
+        }
+    }
+    /* section - global */
+    .global {
+        .bg-box {
+            height: 1024px;
+            background-image: url(../images/global-map.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 60%;
+            background-attachment: fixed;
+        }
+    }
+    /* section - business */
+    .business {
+        padding: 100px 0;
+        .inner-box {
+            .business-wrap {
+                position: relative;
+                height: auto;
+                display: flex;
+                .slide-box {
+                    margin: 20px 0 20px 0;
+                    flex: 2;
+                    div {
+                        position: sticky;
+                        top: 30%;
+                        left: 0;
+                        b {
+                            font-size: 32px;
+                            color: $dark-blue;
+                            margin: 20px 0;
+                            display: inline-block;
+                        }
+                    }
+                }
+                .item-list {
+                    flex: 2;
+                    .item {
+                        width: 403px;
+                        margin-bottom: 80px;
+                        .item-img {
+                            width: 100%;
+                            height: 403px;
+                            position: relative;
+                            img {
+                                width: inherit;
+                                height: inherit;
+                                object-fit: cover;
+                                transition: 0.3s;
+                            }
+                            .type {
+                                position: absolute;
+                                bottom: 20px;
+                                text-align: center;
+                                a {
+                                    display: inline-block;
+                                    width: 140px;
+                                    border: 1px solid $light-gary;
+                                    color: $light-gary;
+                                    padding: 5px 15px;
+                                    border-radius: 20px;
+                                    margin: 5px 10px;
+                                    text-align: left;
+                                    position: relative;
+                                    background-color: transparent;
+                                    transition: 0.3s;
+                                    font-weight: 400;
+                                    &:after {
+                                        content: '\F285';
+                                        position: absolute;
+                                        font-family: $bs-font;
+                                        right: 10px;
+                                        top: 9px;
+                                    }
+                                    &:hover {
+                                        background-color: $light-gary;
+                                        color: $dark-gray;
+                                        border: 1px solid transparent;
+                                    }
+                                }
+                            }
+                        }
+                        .item-title {
+                            padding: 20px 0;
+                            font-weight: 600;
+                            color: $dark-gray;
+                            div {
+                                font-family: $primary-en;
+                                font-size: 24px;
+                                b {
+                                    color: $dark-red;
+                                    margin-right: 10px;
+                                }
+                            }
+                        }
+                    }
+                    .first-item {
+                        position: static;
+                    }
+                    .sec-item {
+                        position: static;
+                        top: 0;
+                    }
+                    .last-item {
+                        position: static;
+                        margin-bottom: 0;
+                    }
+                    .sec-item ,
+                    .last-item {
+                        .btn-more-sub {
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            transform: translate(-50%,-50%);
+                            border: 1px solid $light-gary;
+                            background-color: #0000009f;
+                            color: $light-gary;
+                            font-size: 25px;
+                            font-family: $primary-en;
+                            border-radius: 20px;
+                            padding: 3px 15px;
+                            opacity: 0;
+                            transition: 0.5s;
+                            .bi {
+                                margin-left: 10px;
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* section - ESG */
+    .esg {
+        .inner-box {
+            .esg-title {
+                text-align: center;
+                margin-bottom: 40px;
+                transform: translateY(-50px);
+                div {
+                    margin-top: 20px;
+                    font-size: 20px;
+                }
+                &.active {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            .eag-video {
+                position: relative;
+                width: 100%;
+                height: 0;
+                padding-top: 56%;
+                iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    /* ##### Footer ##### */
+    .footer-wrap {
+        .site-map-wrap {
+            .inner-box {
+                padding: 20px 40px;
+                margin: 0 auto;
+                flex-direction: column;
+                gap: 0;
+                .list-title {
+                    & > li {
+                        font-size: 20px;
+                        padding: 20px 0;
+                        position: relative;
+                        &:after {
+                            content: '\F282';
+                            position: absolute;
+                            font-family: $bs-font;
+                            right: 0px;
+                            line-height: 20px;
+                            font-size: 20px;
+                        }
+                    }
+                    .list-detail {
+                        display: none;
+                        margin-top: 0;
+                        margin-bottom: 20px;
+                        font-size: 16px;
+                        li {
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+        .company-info {
+            border-top: 1px solid $light-gary;
+            .inner-box {
+                margin: 0 auto;
+                padding: 40px;
+                display: block;
+                font-size: 16px;
+                .company-info-detail {
+                    div {
+                        margin-bottom: 20px;
+                        span {
+                            display: inline-block;
+                            &:after {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                .family-site-box {
+                    display: none;
+                }
+            }
+        }
+    }
+}
