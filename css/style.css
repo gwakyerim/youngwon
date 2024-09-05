@@ -65,7 +65,7 @@ body {
   font-size: 16px;
 }
 .header-wrap.active {
-  background-color: rgba(255, 255, 255, 0.6784313725);
+  background-color: #ffffff;
 }
 .header-wrap .inner-box {
   padding: 0 80px;

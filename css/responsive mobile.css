@@ -58,6 +58,7 @@ ul {
     height: 52px;
     font-size: 16px;
     position: fixed;
+    background-color: #ffffff;
   }
   .header-wrap .inner-box {
     width: 100%;
