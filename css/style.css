@@ -67,6 +67,9 @@ body {
 .header-wrap.active {
   background-color: #ffffff;
 }
+.header-wrap:hover {
+  background-color: #ffffff;
+}
 .header-wrap .inner-box {
   padding: 0 80px;
   display: flex;

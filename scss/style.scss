@@ -54,6 +54,9 @@ body {
     &.active {
         background-color: $white;
     }
+    &:hover {
+        background-color: $white;
+    }
     .inner-box {
         padding: 0 80px;
         display: flex;
